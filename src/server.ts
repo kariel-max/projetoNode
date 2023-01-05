@@ -1,10 +1,13 @@
 import express from "express";
 import dotenv from 'dotenv';
+import { mongoConnect } from './database/mongo'
 import mustache from 'mustache-express';
 import path from "path";
 import rotas from './rotas/index'
 
 dotenv.config();
+
+mongoConnect();
 
 const server = express();
 
